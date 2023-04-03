@@ -1,0 +1,96 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.my-custom-main {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.my-custom-card {
+    display: inline-block;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 20px;
+    width: 500px;
+    height: 650px;
+    padding-left:20px;
+    padding-right:20px;
+    transition: 0.5s;
+}
+
+.my-custom-card:hover {
+    box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+.my-custom-description {
+    align-items: center;
+    margin: auto;
+    height: calc(100% - 175px);
+    width: 100%;
+    text-align: center;
+}
+
+.my-custom-description .item-description {
+    height: 75px;
+}
+
+.my-custom-description h3 {
+    height: 70px;
+}
+.my-custom-description #item-price {
+    height: 30px;
+}
+
+.img-container-card {
+    height: 275px;
+}
+
+.my-custom-card img {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+}
+
+#carouselExampleInterval {
+    margin: 100px 75px 50px;
+    box-shadow: 0 32px 72px 0 rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.prev-next-btn-container {
+    margin: auto;
+    padding: 25px;
+}
+
+#creator-page-button {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}

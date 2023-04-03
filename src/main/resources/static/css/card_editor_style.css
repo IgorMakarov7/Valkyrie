@@ -1,0 +1,102 @@
+.my-custom-main {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.my-custom-card {
+    display: inline-block;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 20px;
+    width: 350px;
+    height: 450px;
+    transition: 0.5s;
+}
+
+.my-custom-card:hover {
+    box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+.my-custom-description {
+    align-items: center;
+    margin: auto;
+    height: calc(100% - 175px);
+    width: 100%;
+    text-align: center;
+}
+
+.my-custom-description .item-description {
+    height: 75px;
+}
+
+.my-custom-description h3 {
+    height: 70px;
+}
+.my-custom-description #item-price {
+    height: 30px;
+}
+
+
+.my-custom-card img {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.container {
+    padding: 16px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    resize: none;
+    background: #f1f1f1;
+}
+
+input:focus, textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.submit-button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.submit-button:hover {
+    opacity: 1;
+}
+
+#textContentCard {
+    height: 75px;
+    resize: none;
+}
+
+#fullDescription {
+    height: 150px;
+    resize: none;
+}
