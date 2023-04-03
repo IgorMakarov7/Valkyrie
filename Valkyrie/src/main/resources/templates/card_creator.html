@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание</title>
+    <link rel="icon" type="image/x-icon" href="/images/head-logo.png">
+    <link rel="stylesheet" th:href="@{/css/admin_panel_style.css}">
+    <link rel="stylesheet" th:href="@{/css/card_editor_style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img id="logo" th:src="@{/images/logo-white-bg.png}" alt="">
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li>
+            <form th:object="${adminUser}"
+                  th:action="@{/admin-panel}" th:method="post">
+                <input type="hidden" th:field="*{login}" th:value="${adminUser.getLogin()}">
+                <input type="hidden" th:field="*{password}" th:value="${adminUser.getPassword()}">
+                <button type="submit" class="nav-link px-2 link-secondary btn btn-light">Admin-Panel</button>
+            </form>
+        </li>
+    </ul>
+</header>
+
+<form th:action="@{/admin-panel/creator/create}" th:method="post" th:object="${card}" enctype="multipart/form-data">
+    <div class="container">
+
+        <div th:object="${adminUser}">
+            <input type="hidden" th:field="*{login}" th:value="${adminUser.getLogin()}">
+            <input type="hidden" th:field="*{password}" th:value="${adminUser.getPassword()}">
+        </div>
+
+        <h1 align="center">Создать карточку товара</h1>
+        <p>Пожалуйства выполните следующие правила: <br>
+            1) все поля должны быть заполнены (иначе вас выбросит на страницу входа в админ панель) <br>
+            2) Файл должен быть png или jpeg <br>
+            3) файл изображения должен быть в проекте <br>
+            4) Полное описание будет иметь тот же формат, что и вы введете тут
+        </p>
+        <hr>
+
+        <input th:type="file" th:name="image" accept="image/png, image/jpeg">
+
+        <label for="headerCard"><b>Заголовок</b></label>
+        <input maxlength="40" th:field="*{header}" type="text" placeholder="Введите заголовок" id="headerCard">
+
+        <label for="textContentCard"><b>Краткое Описание</b></label>
+        <textarea th:field="*{description}" maxlength="200"
+                  placeholder="Введите описание товара, до 200 символов"
+                  id="textContentCard"></textarea>
+
+        <label for="fullDescription"><b>Полное Описание</b></label>
+        <textarea th:field="*{fullDescription}" maxlength="20000"
+                  placeholder="Введите полное описание товара, до 20 000 символов"
+                  id="fullDescription"></textarea>
+
+        <label for="priceCard"><b>Цена</b></label>
+        <input th:field="*{price}" type="text" placeholder="Введите цену товара" id="priceCard">
+
+        <input type="hidden" th:field="*{id}" th:value="${card.id}">
+        <hr>
+
+        <button type="submit" class="submit-button">Подтвердить</button>
+    </div>
+</form>
+
+<footer>
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <div class="text-white mb-3 mb-md-0">
+            Valkyries-shop © 2023. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
